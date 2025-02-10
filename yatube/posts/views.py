@@ -9,7 +9,11 @@ from django.shortcuts import render
 
 def index(request):
     template = 'posts/group_list.html'
-    return render(request, template)
+    text = 'Главная страница'
+    context = {
+        'text': text,
+    }
+    return render(request, template, context)
 
 
 # Страница со списком мороженого
@@ -20,4 +24,9 @@ def ice_cream_list(request):
 # Страница с информацией об одном сорте мороженого;
 # view-функция принимает параметр pk из path()
 def group_posts(request, slug):
-    return HttpResponse(f'Мороженое номер {slug}')
+    template = 'posts/group_list.html'
+    text = "Здесь будет информация о группах проекта Yatube"
+    context = {
+        'text': text,
+    }
+    return render(request, template, context)
