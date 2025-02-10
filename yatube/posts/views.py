@@ -8,7 +8,7 @@ from django.shortcuts import render
  #   return HttpResponse('Главная страница')
 
 def index(request):
-    template = 'posts/index.html'
+    template = 'posts/group_list.html'
     return render(request, template)
 
 
