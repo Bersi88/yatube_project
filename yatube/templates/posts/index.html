@@ -1,5 +1,7 @@
-
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"{% endblock %}
 {% block title %} {{ text }} {% endblock %}
 {% block content %}
       <!-- класс py-5 создает отступы сверху и снизу блока -->
@@ -22,7 +24,7 @@
             и Бабарыкинымъ, ругалъ Сержпутовскому и ничего не сдѣлалъ, вотъ 3 упрека, которыя дѣлаю с
             ебѣ за нынѣшній день. (3)
           </p>
-          <a href="group/">все записи группы</a>
+          <a class="navbar-brand" href="{% url 'posts:second' %}"> Все записи группы </a>
         </article>
         <hr>
         <article>
